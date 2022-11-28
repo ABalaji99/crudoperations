@@ -22,7 +22,7 @@ const EmpCreate = () => {
       const empdata={name,lastname,department,email,country,phone,website,active};
       
 
-      fetch("http://localhost:3000/employee",{
+      fetch("https://vercel.com/abalaji99/crudsops/employee",{
         method:"POST",
         headers:{"content-type":"application/json"},
         body:JSON.stringify(empdata)

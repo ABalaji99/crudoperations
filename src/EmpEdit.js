@@ -7,7 +7,7 @@ const EmpEdit = () => {
     //const [empdata, empdatachange] = useState({});
 
     useEffect(() => {
-        fetch("http://localhost:3000/employee/" + empid).then((res) => {
+        fetch("https://vercel.com/abalaji99/crudsops/employee/" + empid).then((res) => {
             return res.json();
         }).then((resp) => {
             idchange(resp.id);
@@ -46,7 +46,7 @@ const EmpEdit = () => {
       const empdata={id,name,lastname,department,email,country,phone,website,active};
       
 
-      fetch("http://localhost:3000/employee/"+empid,{
+      fetch("https://vercel.com/abalaji99/crudsops/employee/"+empid,{
         method:"PUT",
         headers:{"content-type":"application/json"},
         body:JSON.stringify(empdata)

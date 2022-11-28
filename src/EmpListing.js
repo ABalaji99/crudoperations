@@ -16,7 +16,7 @@ const EmpListing = () => {
     }
     const Removefunction = (id) => {
         if (window.confirm('Do you want to remove?')) {
-            fetch("http://localhost:3000/employee/" + id, {
+            fetch("https://vercel.com/abalaji99/crudsops/employee/" + id, {
                 method: "DELETE"
             }).then((res) => {
                 alert('Removed successfully.')
@@ -31,7 +31,7 @@ const EmpListing = () => {
 
 
     useEffect(() => {
-        fetch("http://localhost:3000/employee").then((res) => {
+        fetch("https://vercel.com/abalaji99/crudsops/employee").then((res) => {
             return res.json();
         }).then((resp) => {
             empdatachange(resp);
