@@ -61,7 +61,7 @@ const EmpCreate = () => {
                                         <div className="form-group">
                                             <label>Name</label>
                                             <input required value={name} onMouseDown={e=>valchange(true)} onChange={e=>namechange(e.target.value)} className="form-control"></input>
-                                        {name.length==0 && validation && <span className="text-danger">Enter the name</span>}
+                                        {name.length===0 && validation && <span className="text-danger">Enter the name</span>}
                                         </div>
                                     </div>
 
@@ -69,7 +69,7 @@ const EmpCreate = () => {
                                         <div className="form-group">
                                             <label>Last Name</label>
                                             <input required value={lastname} onMouseDown={e=>valchange(true)} onChange={e=>lastNameChange(e.target.value)} className="form-control"></input>
-                                        {name.length==0 && validation && <span className="text-danger">Enter the name</span>}
+                                        {name.length===0 && validation && <span className="text-danger">Enter the name</span>}
                                         </div>
                                     </div>
 
