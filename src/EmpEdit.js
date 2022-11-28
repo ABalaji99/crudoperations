@@ -28,11 +28,22 @@ const EmpEdit = () => {
     const[validation,valchange]=useState(false);
 
 
+   
+    const[lastname,lastNameChange]=useState("");
+    const[department,departmentChange]=useState("");
+ 
+    const[country,countryChange]=useState("");
+ 
+    const[website ,changeWeb]=useState("")
+
+
+
+
     const navigate=useNavigate();
 
     const handlesubmit=(e)=>{
       e.preventDefault();
-      const empdata={id,name,email,phone,active};
+      const empdata={id,name,lastname,department,email,country,phone,website,active};
       
 
       fetch("http://localhost:3000/employee/"+empid,{
@@ -56,7 +67,7 @@ const EmpEdit = () => {
 
                     <div className="card" style={{"textAlign":"left"}}>
                         <div className="card-title">
-                            <h2>Employee Edit</h2>
+                            <h2>Friends Edit</h2>
                         </div>
                         <div className="card-body">
 
@@ -79,6 +90,21 @@ const EmpEdit = () => {
 
                                 <div className="col-lg-12">
                                     <div className="form-group">
+                                        <label>Last Name</label>
+                                        <input required value={lastname} onMouseDown={e=>valchange(true)} onChange={e=>lastNameChange(e.target.value)} className="form-control"></input>
+                                    {name.length==0 && validation && <span className="text-danger">Enter the name</span>}
+                                    </div>
+                                </div>
+
+                                <div className="col-lg-12">
+                                    <div className="form-group">
+                                        <label>Department</label>
+                                        <input value={department} onChange={e=>departmentChange(e.target.value)} className="form-control"></input>
+                                    </div>
+                                </div>
+
+                                <div className="col-lg-12">
+                                    <div className="form-group">
                                         <label>Email</label>
                                         <input value={email} onChange={e=>emailchange(e.target.value)} className="form-control"></input>
                                     </div>
@@ -86,8 +112,22 @@ const EmpEdit = () => {
 
                                 <div className="col-lg-12">
                                     <div className="form-group">
+                                        <label>Country</label>
+                                        <input value={country} onChange={e=>countryChange(e.target.value)} className="form-control"></input>
+                                    </div>
+                                </div>
+
+                                <div className="col-lg-12">
+                                    <div className="form-group">
                                         <label>Phone</label>
                                         <input value={phone} onChange={e=>phonechange(e.target.value)} className="form-control"></input>
+                                    </div>
+                                </div>
+
+                                <div className="col-lg-12">
+                                    <div className="form-group">
+                                        <label>Website</label>
+                                        <input value={website} onChange={e=>changeWeb(e.target.value)} className="form-control"></input>
                                     </div>
                                 </div>
 
